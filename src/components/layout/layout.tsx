@@ -60,20 +60,25 @@ export const Layout = () => {
               </motion.button>
               <nav className="font-semibold">
                 <ul>
-                  {appRoutes.map(({ path, label }) => (
-                    <li key={path}>
-                      <NavLink
-                        to={path}
-                        className={({ isActive }) =>
-                          `block px-4 py-4 cursor-pointer transition-colors duration-200 ${
-                            isActive ? "font-bold" : ""
-                          }`
-                        }
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {label}
-                      </NavLink>
-                    </li>
+                  {appRoutes.map(({ path, label }, index) => (
+                    <>
+                      <li key={path}>
+                        <NavLink
+                          to={path}
+                          className={({ isActive }) =>
+                            `block px-4 py-4 cursor-pointer transition-colors duration-200 ${
+                              isActive ? "font-bold" : ""
+                            }`
+                          }
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {label}
+                        </NavLink>
+                      </li>
+                      {index + 1 !== appRoutes.length && (
+                        <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mx-4" />
+                      )}
+                    </>
                   ))}
                 </ul>
               </nav>

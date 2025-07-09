@@ -86,6 +86,8 @@ export const Calculator = () => {
   return (
     <motion.div
       layout
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
       className="bg-gray-800 p-6 rounded-2xl shadow-xl w-full max-w-md border-2 border-white"
     >
       <div className="mb-4 p-4 bg-gray-700 rounded-xl min-h-[5rem]">
